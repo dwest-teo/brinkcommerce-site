@@ -21,6 +21,7 @@ const uglify   = require('rollup-plugin-uglify');
 const svgmin   = require('gulp-svgmin');
 const svgstore = require('gulp-svgstore');
 const cheerio  = require('gulp-cheerio');
+const sitemap  = require('gulp-sitemap');
 
 // error handler
 const onError = function (error) {
@@ -50,6 +51,15 @@ gulp.task('html', ['images', 'icons'], () => {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true,
       removeOptionalTags: true,
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
+// sitemap
+gulp.task('sitemap', ['html'], () => {
+  gulp.src('dist/**/*.html')
+    .pipe(sitemap({
+      siteUrl: 'http://brinkcommerce.com'
     }))
     .pipe(gulp.dest('dist'));
 });
@@ -206,7 +216,7 @@ gulp.task('build', ['clean'], () => {
   fs.mkdirSync('dist/maps');
 
   // run the tasks
-  gulp.start('html', 'sass', 'js', 'images', 'icons', 'fonts', 'humans', 'favicon');
+  gulp.start('html', 'sitemap', 'sass', 'js', 'images', 'icons', 'fonts', 'humans', 'favicon');
 });
 
 gulp.task('default', ['build', 'server', 'watch']);
