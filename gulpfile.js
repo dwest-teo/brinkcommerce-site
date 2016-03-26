@@ -157,6 +157,10 @@ const others = [
     name: 'favicon',
     src:  '/favicon.ico',
     dest: '',
+  }, {
+    name: 'manifest',
+    src:  '/manifest.json',
+    dest: '',
   },
 ];
 
@@ -216,7 +220,7 @@ gulp.task('build', ['clean'], () => {
   fs.mkdirSync('dist/maps');
 
   // run the tasks
-  gulp.start('html', 'sitemap', 'sass', 'js', 'images', 'icons', 'fonts', 'humans', 'favicon');
+  gulp.start('html', 'sitemap', 'sass', 'js', 'images', 'icons', 'fonts', 'humans', 'favicon', 'manifest');
 });
 
 gulp.task('default', ['build', 'server', 'watch']);
