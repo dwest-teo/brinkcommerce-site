@@ -1,7 +1,7 @@
 .hero {
   background: url("images/sellmore.svg") $bg-dark;
   background-size: cover;
-  background-blend-mode: darken;
+  // background-blend-mode: darken;
   background-position: center;
   color: $base-background-color;
   width: 100%;
@@ -32,6 +32,7 @@
   text-align: center;
   padding: 0 5%;
   width: 100%;
+  background: rgba($base-font-color, .54);
 }
 
 .hero-action {
