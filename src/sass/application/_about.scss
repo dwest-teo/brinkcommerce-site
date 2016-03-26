@@ -1,0 +1,12 @@
+section.about {
+
+  .section-body {
+    background: $base-background-color;
+
+    h2,
+    h4,
+    p {
+      color: $base-font-color;
+    }
+  }
+}

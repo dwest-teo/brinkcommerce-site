@@ -1,0 +1,62 @@
+section.contact {
+  background: $contact-color;
+  text-align: center;
+  padding: $base-spacing;
+
+  h2,
+  h3,
+  p {
+    color: $base-background-color;
+    margin-bottom: $base-spacing;
+  }
+
+  p {
+
+    @include media($medium) {
+      max-width: 60%;
+    }
+  }
+
+  button {
+    margin-top: $large-spacing;
+    background-color: $red;
+    color: $base-background-color;
+  }
+
+  ul {
+    margin-top: $large-spacing;
+
+    @include media($medium) {
+      max-width: 60%;
+    }
+
+    li {
+      display: inline-block;
+      padding: $small-spacing;
+
+      @include media($medium) {
+        padding: $base-spacing;
+      }
+
+      a {
+        position: relative;
+      }
+
+      svg {
+        height: 2em;
+        width: 2em;
+        opacity: 1;
+        transition: opacity .4s;
+
+        &:hover {
+          opacity: .6;
+        }
+
+        @include media($medium) {
+          height: 3em;
+          width: 3em;
+        }
+      }
+    }
+  }
+}

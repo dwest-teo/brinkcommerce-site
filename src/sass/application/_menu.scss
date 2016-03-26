@@ -1,0 +1,92 @@
+header {
+  background: $nav-background;
+  height: $header-height;
+  width: 100%;
+  z-index: $z-fixed-elem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: .87;
+  transition: opacity .2s $base-timing, transform .5s $base-timing;
+
+  &.h-init {
+
+    &.h-top {
+      opacity: .87;
+    }
+
+    &.h-nottop {
+      opacity: .87;
+    }
+
+    &.h-pinned {
+      transform: translateY(0);
+    }
+
+    &.h-unpinned {
+      transform: translateY(-$header-height);
+    }
+  }
+
+  body.font-active & {
+    opacity: 1;
+  }
+
+  nav {
+
+    ul {
+      height: $header-height;
+
+      li {
+        padding: 0 .325em;
+
+        @include media($small) {
+          padding: 0 .5em;
+        }
+
+        @include media($large) {
+          padding: 0 1em !important;
+        }
+
+        &.logo {
+          height: $header-height;
+          width: $header-height;
+          position: relative;
+          flex: 1;
+          padding: 0 .5em;
+
+          a {
+            position: absolute;
+            height: $header-height;
+            max-width: 5.5em;
+            @include center(y);
+
+            svg {
+              height: 100%;
+              max-width: 100%;
+            }
+          }
+        }
+
+        a {
+          color: $base-background-color;
+          font-weight: 600;
+          opacity: .87;
+          transition: opacity .4s;
+          font-size: .75em;
+
+          &:focus,
+          &:active,
+          &:hover {
+            color: $base-background-color;
+            opacity: .54;
+          }
+
+          @include media($small) {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}

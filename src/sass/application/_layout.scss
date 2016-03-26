@@ -1,0 +1,83 @@
+//common layout elements
+main,
+section.contact {
+  z-index: $z-content;
+}
+
+.v-flex {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.h-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.content {
+  @include outer-container();
+  padding: 4em $base-spacing;
+
+  @include media($medium) {
+    padding: 4em;
+  }
+}
+
+.link-text-hidden {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+  visibility: hidden;
+  pointer-events: none;
+  color: $base-background-color;
+  font-size: .75em;
+}
+
+.content-intro {
+  margin-bottom: $base-spacing;
+}
+
+.section-heading {
+  padding: 4em 4em 0;
+}
+
+.icon-con {
+  @include span-columns(12);
+  margin-top: $base-spacing;
+}
+
+.icon-wrap {
+  text-align: center;
+  margin-bottom: $large-spacing;
+
+  svg {
+    margin-bottom: $small-spacing;
+    max-width: 100%;
+  }
+
+  h4 {
+    margin-bottom: $small-spacing;
+  }
+
+  p {
+    font-size: .9em;
+  }
+
+  @include media($medium) {
+    padding: 0 5em;
+  }
+
+  @include media($large) {
+    padding: 0;
+    margin-bottom: 0;
+    @include span-columns(4);
+    @include omega(3n);
+  }
+}

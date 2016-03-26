@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  Donny West -- Front End Engineer -- @donnyblaze1
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, SASS/CSS3, JavaScript/ECMAScript 2015
+  Bourbon, Neat, Node.js, Gulp.js, Babel, Rollup.js

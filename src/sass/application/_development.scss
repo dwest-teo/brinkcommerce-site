@@ -1,0 +1,78 @@
+section.development {
+  background: $blue;
+
+  h2,
+  h3,
+  h4,
+  p {
+    color: $base-background-color;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  .section-body {
+
+    img {
+      border-radius: $base-border-radius;
+      margin-bottom: $small-spacing;
+    }
+
+    .dev-title {
+      text-align: center;
+
+      img {
+        max-height: 18em;
+      }
+
+      @include media($large) {
+        @include span-columns(6);
+        padding: $base-spacing;
+      }
+    }
+
+    .dev-examples {
+      padding: $base-spacing;
+      margin-top: $base-spacing;
+      margin-bottom: $base-spacing;
+      background: $bg-light;
+
+      h4,
+      p {
+        text-align: center;
+        color: $base-font-color;
+      }
+
+      p {
+        opacity: .54;
+      }
+
+      ul {
+        font-size: .75em;
+        color: $base-font-color;
+        list-style-type: square;
+        padding: 0 $base-spacing;
+
+        li {
+          margin-bottom: .5em;
+        }
+
+        @include media($medium) {
+          @include span-columns(6 of 12);
+        }
+
+        @include media($large) {
+          @include span-columns(3 of 6);
+        }
+      }
+
+      @include span-columns(12);
+
+      @include media($large) {
+        @include span-columns(6);
+        @include omega();
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.hero {
+  background: url("images/sellmore.svg") $bg-dark;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-position: center;
+  color: $base-background-color;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: table;
+  position: relative;
+
+  .hero-down-arrow {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    @include center(x);
+    bottom: 1.5em;
+    opacity: 0;
+    transition: opacity 1.5s;
+
+    &.active {
+      opacity: .54;
+      cursor: pointer;
+    }
+  }
+}
+
+.hero-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 5%;
+  width: 100%;
+}
+
+.hero-action {
+  margin-top: $large-spacing;
+}

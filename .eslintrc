@@ -1,0 +1,23 @@
+{
+  "globals": {
+    // Put things like jQuery, etc
+    // "jQuery": true,
+    // "$": true
+    "document": true,
+    "window": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": "airbnb/base",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "html"
+  ]
+}

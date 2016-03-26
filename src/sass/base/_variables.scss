@@ -1,0 +1,74 @@
+// Breakpoints
+// $medium-screen: 600px;
+// $large-screen: 900px;
+
+// Typography
+$base-font-family: "roboto", $font-stack-helvetica;
+$heading-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$large-spacing: $base-spacing * 2;
+$header-height: 3em;
+$footer-height: ($header-height * 1.5);
+
+// z-index
+$base-z-index: 0;
+$z-content: 1;
+$z-above-content: 2;
+$z-higher: 3;
+$z-highest: 4;
+$z-fixed-elem: 999;
+
+// Colors
+$blue: #09a3b4;
+$red: #f46353;
+$green: #2ecc71;
+$yellow: #f3aa0c;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+$dark-gray: #222222;
+
+// Font Colors
+$base-font-color: #000;
+$action-color: $blue;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+$bg-light: $secondary-background-color;
+$bg-medium: $medium-gray;
+$bg-dark: rgba($base-font-color, .87);
+
+// Theme Colors
+$primary-color: $red;
+$secondary-color: $yellow;
+$action-color: $yellow;
+$about-color: $red;
+$contact-color: $green;
+$work-color: $blue;
+
+$nav-background: $primary-color;
+$nav-link-color: $base-background-color;
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 250ms;
+$base-timing: $ease-in-out-cubic;

@@ -1,0 +1,17 @@
+section.design {
+
+  .section-body {
+    background: $primary-color;
+  }
+
+  h2,
+  h3,
+  h4,
+  p {
+    color: $base-background-color;
+  }
+
+  h3 {
+    margin-top: $base-spacing;
+  }
+}

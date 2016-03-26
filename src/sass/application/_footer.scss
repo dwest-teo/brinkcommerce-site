@@ -1,0 +1,23 @@
+footer {
+  @include clearfix();
+  background: $base-font-color;
+  opacity: .87;
+  padding: $base-spacing;
+  width: 100%;
+
+  a {
+    color: $base-background-color;
+    font-weight: 700;
+    opacity: .54;
+    transition: opacity .2s;
+
+    &:hover,
+    &:focus {
+      opacity: .87;
+    }
+
+    &.right {
+      float: right;
+    }
+  }
+}

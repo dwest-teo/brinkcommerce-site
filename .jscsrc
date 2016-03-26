@@ -1,0 +1,19 @@
+
+{
+  "preset": "airbnb",
+  "excludeFiles": [
+    "node_modules/**",
+    "**/*.min.js",
+    "**/*-min.js",
+    "**/*.svg"
+  ],
+  "maximumLineLength": {
+    "value": 80,
+    "allExcept": ["comments", "regex", "urlComments", "functionSignature"]
+  },
+  "requireCamelCaseOrUpperCaseIdentifiers": {
+    "ignoreProperties": true,
+    "allowedPrefixes": ["AuthorizeNet_", "authorizenet_"],
+    "allowedSuffixes": ["_address", "_form"]
+  }
+}
