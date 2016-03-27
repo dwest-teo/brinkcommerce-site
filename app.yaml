@@ -11,15 +11,16 @@ handlers:
 - url: /(.+)
   static_files: dist/\1
   upload: dist/(.*)
+  secure: always
+  http_headers:
+    Vary: Accept-Encoding
 
 - url: /
   static_files: dist/index.html
   upload: dist/index.html
-
-- url: .*
+  secure: always
   http_headers:
     Vary: Accept-Encoding
-  secure: always
 
 skip_files:
 - ^(.*/)?app\.yaml
