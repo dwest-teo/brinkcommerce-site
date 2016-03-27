@@ -36,22 +36,22 @@
       <nav>
         <ul class="h-flex">
           <li class="logo">
-            <a id="logo-link" href="#hero">
+            <a href="#hero" data-jump>
               <svg><use xlink:href="#brink-logo" /></svg>
               <span class="link-text-hidden">Top</span>
             </a>
           </li>
           <li>
-            <a id="about-link" href="#about">About</a>
+            <a href="#about" data-jump>About</a>
           </li>
           <li>
-            <a id="design-link" href="#design">Design</a>
+            <a href="#design" data-jump>Design</a>
           </li>
           <li>
-            <a id="development-link" href="#development">Development</a>
+            <a href="#development" data-jump>Development</a>
           </li>
           <li>
-            <a id="contact-link" href="#contact">Contact</a>
+            <a href="#contact" data-jump>Contact</a>
           </li>
         </ul>
       </nav>
@@ -64,10 +64,10 @@
           <h1 class="hero-text">Sell more stuff.</h1>
           <p class="delta">Whatever you sell, Brink Commerce's advanced front end products &amp; services are purpose-built to take your Bigcommerce site to the next level.</p>
           <div class="hero-action">
-            <button id="learn-more-button">Learn More</button>
+            <button id="learn-more-button" href="#about" data-jump>Learn More</button>
           </div>
         </div>
-        <svg id="hero-down-arrow" class="hero-down-arrow">
+        <svg id="hero-down-arrow" class="hero-down-arrow" href="#about" data-jump>
           <use xlink:href="#arrow-down" />
         </svg>
       </section>
@@ -201,8 +201,8 @@
     </main>
 
     <footer>
-      <a id="footer-link-a" href="#hero">&copy; 2016 Brink Commerce, Inc.</a>
-      <a id="footer-link-b" class="right" href="#hero">Top</a>
+      <a href="#hero" data-jump>&copy; 2016 Brink Commerce, Inc.</a>
+      <a class="right" href="#hero" data-jump>Top</a>
     </footer>
 
     <script src="main.min.js"></script>

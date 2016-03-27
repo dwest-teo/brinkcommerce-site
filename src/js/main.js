@@ -3,6 +3,7 @@ import Font from './modules/webfonts';
 import Hero from './modules/hero';
 import Menu from './modules/menu';
 import Links from './modules/links';
+import Contact from './modules/contact';
 
 const initial = () => {
   Icons('/icons/icons.svg', 11);
@@ -15,6 +16,7 @@ const main = () => {
   Hero('#hero');
   Menu('#header');
   Links();
+  Contact();
 };
 
 document.addEventListener('DOMContentLoaded', main);

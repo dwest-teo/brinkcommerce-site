@@ -35,12 +35,11 @@ const onError = function (error) {
   this.emit('end');
 };
 
-// clean
+// clean build dir
 gulp.task('clean', () => del('dist'));
 
-// html
-// gulp.task('html', ['images', 'icons'], () => {
-gulp.task('html', () => {
+// process and minify html
+gulp.task('html', ['icons'], () => {
   return gulp.src('src/html/**/*.html')
     .pipe(plumber({ errorHandler: onError }))
     .pipe(htmlmin({
@@ -57,11 +56,11 @@ gulp.task('html', () => {
     .pipe(gulp.dest('dist'));
 });
 
-// sitemap
+// create sitemap xml
 gulp.task('sitemap', ['html'], () => {
   gulp.src('dist/**/*.html')
     .pipe(sitemap({
-      siteUrl: 'https://brinkcommerce.com'
+      siteUrl: 'https://brinkcommerce.com',
     }))
     .pipe(gulp.dest('dist'));
 });
@@ -84,6 +83,7 @@ gulp.task('sass', () => {
     .pipe(sync.stream());
 });
 
+// inline css if link tag has "inline" attribute
 gulp.task('inline', ['html', 'sass'], () => {
   return gulp.src('dist/**/*.html')
     .pipe(inline())
@@ -120,10 +120,7 @@ gulp.task('js', () => {
   return rollup
     .rollup(read)
     .then(bundle => {
-      // generate the bundle
       const files = bundle.generate(write);
-
-      // write the files to dist
       fs.writeFileSync('dist/main.min.js', files.code);
       fs.writeFileSync('dist/maps/main.min.js.map', files.map.toString());
     });
@@ -158,16 +155,8 @@ const others = [
     src:  '/fonts/**/*.{css,woff,woff2}',
     dest: '/fonts',
   }, {
-    name: 'humans',
-    src:  '/humans.txt',
-    dest: '',
-  }, {
-    name: 'favicon',
-    src:  '/favicon.ico',
-    dest: '',
-  }, {
-    name: 'manifest',
-    src:  '/manifest.json',
+    name: 'misc',
+    src:  '/{humans.txt,favicon.ico,manifest.json}',
     dest: '',
   },
 ];
@@ -223,12 +212,19 @@ gulp.task('watch', () => {
 
 // build and default tasks
 gulp.task('build', ['clean'], () => {
-  // create dist directories
   fs.mkdirSync('dist');
   fs.mkdirSync('dist/maps');
 
-  // run the tasks
-  gulp.start('html', 'sitemap', 'sass', 'inline', 'js', 'images', 'icons', 'fonts', 'humans', 'favicon', 'manifest');
+  gulp.start(
+    'html',
+    'sitemap',
+    'sass',
+    'inline',
+    'js',
+    'images',
+    'icons',
+    'fonts',
+    'misc');
 });
 
 gulp.task('default', ['build', 'server', 'watch']);
