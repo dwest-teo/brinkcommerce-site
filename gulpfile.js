@@ -22,6 +22,7 @@ const svgmin   = require('gulp-svgmin');
 const svgstore = require('gulp-svgstore');
 const cheerio  = require('gulp-cheerio');
 const sitemap  = require('gulp-sitemap');
+const inline   = require('gulp-inline-source');
 
 // error handler
 const onError = function (error) {
@@ -81,6 +82,12 @@ gulp.task('sass', () => {
     .pipe(maps.write('./maps', { addComment: false }))
     .pipe(gulp.dest('dist'))
     .pipe(sync.stream());
+});
+
+gulp.task('inline', ['html', 'sass'], () => {
+  return gulp.src('dist/**/*.html')
+    .pipe(inline())
+    .pipe(gulp.dest('dist'));
 });
 
 // js
@@ -221,7 +228,7 @@ gulp.task('build', ['clean'], () => {
   fs.mkdirSync('dist/maps');
 
   // run the tasks
-  gulp.start('html', 'sitemap', 'sass', 'js', 'images', 'icons', 'fonts', 'humans', 'favicon', 'manifest');
+  gulp.start('html', 'sitemap', 'sass', 'inline', 'js', 'images', 'icons', 'fonts', 'humans', 'favicon', 'manifest');
 });
 
 gulp.task('default', ['build', 'server', 'watch']);

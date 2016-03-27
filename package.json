@@ -20,6 +20,7 @@
     "gulp-cheerio": "^0.6.2",
     "gulp-htmlmin": "*",
     "gulp-imagemin": "*",
+    "gulp-inline-source": "^2.1.0",
     "gulp-plumber": "*",
     "gulp-postcss": "*",
     "gulp-sass": "*",
