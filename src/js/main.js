@@ -4,9 +4,14 @@ import Hero from './modules/hero';
 import Menu from './modules/menu';
 import Links from './modules/links';
 
-const main = () => {
-  Icons('/icons/icons.svg', 10);
+const initial = () => {
+  Icons('/icons/icons.svg', 11);
   Font('/fonts/roboto.css', 'roboto');
+};
+
+initial();
+
+const main = () => {
   Hero('#hero');
   Menu('#header');
   Links();

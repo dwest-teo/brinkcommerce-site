@@ -1,7 +1,6 @@
 .hero {
   background: url("images/sellmore.svg") $bg-dark;
   background-size: cover;
-  // background-blend-mode: darken;
   background-position: center;
   color: $base-background-color;
   width: 100%;
@@ -17,7 +16,7 @@
     @include center(x);
     bottom: 1.5em;
     opacity: 0;
-    transition: opacity 1.5s;
+    transition: opacity 2.5s;
 
     &.active {
       opacity: .54;
