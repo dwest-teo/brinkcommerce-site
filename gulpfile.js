@@ -38,7 +38,8 @@ const onError = function (error) {
 gulp.task('clean', () => del('dist'));
 
 // html
-gulp.task('html', ['images', 'icons'], () => {
+// gulp.task('html', ['images', 'icons'], () => {
+gulp.task('html', () => {
   return gulp.src('src/html/**/*.html')
     .pipe(plumber({ errorHandler: onError }))
     .pipe(htmlmin({
