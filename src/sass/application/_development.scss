@@ -8,10 +8,6 @@ section.development {
     color: $base-background-color;
   }
 
-  p {
-    text-align: left;
-  }
-
   .section-body {
 
     img {
@@ -21,6 +17,10 @@ section.development {
 
     .dev-title {
       text-align: center;
+
+      p {
+        text-align: left;
+      }
 
       img {
         max-height: 18em;
