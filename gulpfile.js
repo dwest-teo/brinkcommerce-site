@@ -60,7 +60,7 @@ gulp.task('html', () => {
 gulp.task('sitemap', ['html'], () => {
   gulp.src('dist/**/*.html')
     .pipe(sitemap({
-      siteUrl: 'http://brinkcommerce.com'
+      siteUrl: 'https://brinkcommerce.com'
     }))
     .pipe(gulp.dest('dist'));
 });
