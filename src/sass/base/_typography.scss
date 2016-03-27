@@ -21,8 +21,7 @@ h6 {
   opacity: .87;
 }
 
-h1,
-.alpha {
+h1 {
   font-size: modular-scale(4);
   font-weight: 300;
 
@@ -31,14 +30,12 @@ h1,
   }
 }
 
-h2,
-.beta {
+h2 {
   font-size: modular-scale(3);
   text-align: center;
 }
 
-h3,
-.gamma {
+h3 {
   font-size: modular-scale(2);
   opacity: .54;
 }
@@ -73,10 +70,10 @@ a {
   }
 }
 
-hr {
-  border-bottom: $base-border;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  margin: $base-spacing 0;
-}
+// hr {
+//   border-bottom: $base-border;
+//   border-left: 0;
+//   border-right: 0;
+//   border-top: 0;
+//   margin: $base-spacing 0;
+// }
