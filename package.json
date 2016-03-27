@@ -1,9 +1,9 @@
 {
-  "name": "",
+  "name": "brinkcommerce-site",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
-  "license": "",
+  "description": "Site for Brink Commerce, Inc on GAE",
+  "author": "Donny West",
+  "license": "UNLICENSED",
   "devDependencies": {
     "autoprefixer": "*",
     "babel-eslint": "^5.0.0",
