@@ -12,10 +12,21 @@ function jumpToSection (event) {
   });
 }
 
+function jumpToTop (event) {
+  event.preventDefault();
+  linkJump.jump(-window.pageYOffset, {
+    duration: 1000,
+  });
+}
+
 export default function () {
   const jumpLinks = document.querySelectorAll('[data-jump]');
-
   for (let i = 0; i < jumpLinks.length; ++i) {
     jumpLinks[i].addEventListener('click', jumpToSection, false);
+  }
+
+  const topLinks = document.querySelectorAll('[data-top]');
+  for (let i = 0; i < topLinks.length; ++i) {
+    topLinks[i].addEventListener('click', jumpToTop, false);
   }
 }

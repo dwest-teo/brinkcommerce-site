@@ -9,23 +9,16 @@ export default function(file, fontname) {
 
   try {
     if (localStorage.getItem(fontname)) {
-      // The font is in localStorage, we can load it directly
       addFont();
     } else {
-      // We have to first load the font file asynchronously
       var request = new XMLHttpRequest();
       request.open('GET', file, true);
-
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-          // We save the file in localStorage
           localStorage.setItem(fontname, request.responseText);
-
-          // ... and load the font
           addFont();
         }
       };
-
       request.send();
     }
   } catch (ex) {

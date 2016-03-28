@@ -185,7 +185,7 @@ const sendMaps = (req, res, next) => {
 };
 
 const options = {
-  notify: true,
+  notify: false,
   reloadOnRestart: true,
   logPrefix: 'Brink',
   server: {

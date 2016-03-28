@@ -13,7 +13,5 @@
   },
   "requireCamelCaseOrUpperCaseIdentifiers": {
     "ignoreProperties": true,
-    "allowedPrefixes": ["AuthorizeNet_", "authorizenet_"],
-    "allowedSuffixes": ["_address", "_form"]
   }
 }

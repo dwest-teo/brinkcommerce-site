@@ -1,8 +1,5 @@
 {
   "globals": {
-    // Put things like jQuery, etc
-    // "jQuery": true,
-    // "$": true
     "document": true,
     "window": true
   },
